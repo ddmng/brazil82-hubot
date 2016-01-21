@@ -20,3 +20,6 @@ module.exports = (robot) ->
 
 	robot.hear /ciao a/i, (res) ->
 		res.reply "Ciao bello! (si fa per dire)"
+
+	robot.hear /vado via/i, (res) ->
+		res.reply "Allora non hai capito il momento!"
