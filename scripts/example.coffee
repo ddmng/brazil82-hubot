@@ -12,7 +12,11 @@ module.exports = (robot) ->
 		a = ""
 		for r in con
 			a = a + r + "\n" if r?
-		
-		a = "Non lo trovo, sicuro che l'hai scritto bene?" if a=="" 
+
+		a = "Non lo trovo, sicuro che l'hai scritto bene?" if a==""
 
 		res.reply a
+
+
+	robot.hear /ciao a/i, (res) ->
+		res.reply "Ciao bello! (si fa per dire)"
