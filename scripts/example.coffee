@@ -1,106 +1,18 @@
-# Description:
-#   Example scripts for you to examine and try out.
-#
-# Notes:
-#   They are commented out by default, because most of them are pretty silly and
-#   wouldn't be useful and amusing enough for day to day huboting.
-#   Uncomment the ones you want to try and experiment with.
-#
-#   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
-
 module.exports = (robot) ->
 
-  # robot.hear /badger/i, (res) ->
-  #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
-  #
-  # robot.respond /open the (.*) doors/i, (res) ->
-  #   doorType = res.match[1]
-  #   if doorType is "pod bay"
-  #     res.reply "I'm afraid I can't let you do that."
-  #   else
-  #     res.reply "Opening #{doorType} doors"
-  #
-  # robot.hear /I like pie/i, (res) ->
-  #   res.emote "makes a freshly baked pie"
-  #
-  # lulz = ['lol', 'rofl', 'lmao']
-  #
-  # robot.respond /lulz/i, (res) ->
-  #   res.send res.random lulz
-  #
-  # robot.topic (res) ->
-  #   res.send "#{res.message.text}? That's a Paddlin'"
-  #
-  #
-  # enterReplies = ['Hi', 'Target Acquired', 'Firing', 'Hello friend.', 'Gotcha', 'I see you']
-  # leaveReplies = ['Are you still there?', 'Target lost', 'Searching']
-  #
-  # robot.enter (res) ->
-  #   res.send res.random enterReplies
-  # robot.leave (res) ->
-  #   res.send res.random leaveReplies
-  #
-  # answer = process.env.HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING
-  #
-  # robot.respond /what is the answer to the ultimate question of life/, (res) ->
-  #   unless answer?
-  #     res.send "Missing HUBOT_ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE_THE_UNIVERSE_AND_EVERYTHING in environment: please set and try again"
-  #     return
-  #   res.send "#{answer}, but what is the question?"
-  #
-  # robot.respond /you are a little slow/, (res) ->
-  #   setTimeout () ->
-  #     res.send "Who you calling 'slow'?"
-  #   , 60 * 1000
-  #
-  # annoyIntervalId = null
-  #
-  # robot.respond /annoy me/, (res) ->
-  #   if annoyIntervalId
-  #     res.send "AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH"
-  #     return
-  #
-  #   res.send "Hey, want to hear the most annoying sound in the world?"
-  #   annoyIntervalId = setInterval () ->
-  #     res.send "AAAAAAAAAAAEEEEEEEEEEEEEEEEEEEEEEEEIIIIIIIIHHHHHHHHHH"
-  #   , 1000
-  #
-  # robot.respond /unannoy me/, (res) ->
-  #   if annoyIntervalId
-  #     res.send "GUYS, GUYS, GUYS!"
-  #     clearInterval(annoyIntervalId)
-  #     annoyIntervalId = null
-  #   else
-  #     res.send "Not annoying you right now, am I?"
-  #
-  #
-  # robot.router.post '/hubot/chatsecrets/:room', (req, res) ->
-  #   room   = req.params.room
-  #   data   = JSON.parse req.body.payload
-  #   secret = data.secret
-  #
-  #   robot.messageRoom room, "I have a secret: #{secret}"
-  #
-  #   res.send 'OK'
-  #
-  # robot.error (err, res) ->
-  #   robot.logger.error "DOES NOT COMPUTE"
-  #
-  #   if res?
-  #     res.reply "DOES NOT COMPUTE"
-  #
-  # robot.respond /have a soda/i, (res) ->
-  #   # Get number of sodas had (coerced to a number).
-  #   sodasHad = robot.brain.get('totalSodas') * 1 or 0
-  #
-  #   if sodasHad > 4
-  #     res.reply "I'm too fizzy.."
-  #
-  #   else
-  #     res.reply 'Sure!'
-  #
-  #     robot.brain.set 'totalSodas', sodasHad+1
-  #
-  # robot.respond /sleep it off/i, (res) ->
-  #   robot.brain.set 'totalSodas', 0
-  #   res.reply 'zzzzz'
+	robot.respond /telefono (.*)/i, (res) ->
+		nome = res.match[1]
+		rubrica = [
+			["Abbruzzese Guglielmo","0692710 369, 335 1346777"], ["Ambrosino Tullio","0692710 355"], ["Anzuini Emanuele","0692710 412"], ["Avella Massimiliano","0692710 237, 334 5952310"], ["Bellini Lorenzo",", 335 7160411"], ["Berni Mirko","0692710 302, 333 4970764"], ["Bevilacqua Ovidio","0692710"], ["Bianconi Fabio","0692710 367"], ["Bicocchi Andrea","0692710 547, 335 8095023"], ["Bidello Mario","0692710 219, 334 6809720"], ["Bonifazi Massimiliano","0692710 222"], ["Borro Andrea","0692710 243"], ["Braida Duilio","0692710 236, 333 6053185"], ["Brugnone Pierluigi","0692710 469, 334 6719787"], ["Bruni Pierluigi","0692710 380, 335 8095042"], ["Bruzzese Emiliano","0692710 258"], ["Cacciotti Emanuele","0692710 365"], ["Cannatà Carlo","0692710 368, 335 5997684"], ["Cannavale Alessandro","0692710 531, 335 1809157"], ["Caporale Francesco Alessandro","0692710 530"], ["Cappello Giacomo","0692710 466"], ["Carinci Umberto","0692710 396, 335 6985736"], ["Cavallo Andrea","0692710 233, 331 6817265"], ["Cesarano Nunzio","0692710 402"], ["Chieruzzi Andrea","0692710 306"], ["Cimino Vincenzo","0692710 406, 338 1171511"], ["Cioccolanti Luciano","0692710 388, 334 6719777"], ["Cirillo Lucio","0692710, 335 5997666"], ["Coco Remigio","0692710 541"], ["Coen David","0692710 264"], ["Collalto Mauro","0692710 204, 335 6639863"], ["Corrieri Fabio","0692710 274, 335 1857857"], ["Corsi Fabio","0692710, 340 5060172"], ["D'Angelo Roberto","0692710 374, 331 6817264"], ["D'Antonangelo Dario","0692710 279, 334 3099138"], ["D'Incertopadre Cristian","0692710 460, 338 3038912"], ["De Angelis Andrea","0692710 350, 335 7707927"], ["De Cenzo Giancarlo","0692710 307"], ["De Francesco - Test Plant","0692710 470"], ["De Francesco Fabrizio","0692710 273"], ["De Leoni Giorgio","0692710, 335 5997653"], ["De Maria Massimo","0692710 308, 335 1891627"], ["De Sortis Francesco","0692710 309, 333 8745359"], ["De Sortis Mario","0692710 322"], ["Del Vecchio Cesare","0692710 532, 335 8095008"], ["Delmiglio Alessandro","0692710 403"], ["Di Donna Marco","0692710 346"], ["Di Felice Alberto","0692710 268"], ["Di Giovanni Giandomenico","0692710 545"], ["Di Minica Daniele","0692710 246, 331 4926974"], ["Di Pietro Maurizio","0692710 310, 349 3940026"], ["Di Pietro Oreste","0692710 534"], ["Donello Valerio","0692710 241"], ["Felici Demis","0692710 311"], ["Felici Gianni","0692710 524"], ["Felici Mauro","0692710 226, 333 4970712"], ["Felici Pierluigi","0692710 312"], ["Felici Roberto","0692710 228, 335 8200251"], ["Ferrazza Ascenzo","0692710 411, 339 5458901"], ["Foletto Gabriele","0692710 313"], ["Fontana Emanuele","0692710 387, 333 6303379"], ["Fortini Fabio","0692710 249, 335 7696680"], ["Fumo Nicodemo","0692710 463"], ["Funari Marco","0692710 262, 333 4991130"], ["Gallelli Sergio","0692710 375, 331 6759369"], ["Gazzolo Severino","0692710 315"], ["Giannì Carmine","0692710 275"], ["Granato Marco","0692710 316"], ["Granato Roberto","0692710 317"], ["Grandini Irene","0692710 381"], ["Grasso Tommaso","0692710 373"], ["Guagnano Andres","0692710 544, 335 5970853"], ["Guerrieri Pietro","0692710 323"], ["Guerriero Alessandro","0692710 372"], ["Iannazzo Alessandro",", 334 6135746"], ["Lancio Riccardo","0692710 242, 333 9200553"], ["Lanzuisi Matteo","0692710 339"], ["Latella Germana","0692710 370, 335 8051924"], ["Lavalle Guido","0692710 239"], ["Leanza Mirko","0692710 209, 366 6758427"], ["Leto Giuseppe","0692710 255, 333 4991043"], ["Loretelli Luca","0692710 331"], ["Lozzi Marco","0692710 272"], ["Luppi Adriano","0692710 229, 333 9200405"], ["Mancini Alessandro","0692710 319, 335 1409012"], ["Marini Nicola","0692710391, 333 6053139"], ["Martini Marco","0692710 320"], ["Mengozzi Mario",""], ["Menozzi Marcello","0692710 210, 335 7940517"], ["Merola Salvatore","0692710 265"], ["Meschino Roberto","0692710 251, 334 6727478"], ["Monaco Federico","0692710 389"], ["Nalli Federico","0692710 366"], ["Nirchi Daniele","0692710 384"], ["Origlia Roberto","0692710 513, 339 7753000"], ["Pacetti Demetrio","0692710 385"], ["Paoletti Ermanno","0692710 276, 333 4991192"], ["Pellegrini Diego ","0692710 361"], ["Pellegrini Fausto","0692710 215, 339 3180897"], ["Percoco Walter","0692710 591"], ["Piccardo Sabrina","0692710 325, 335 5665508"], ["Piccolo Paolo","0692710 410"], ["Pierini Pierluigi","0692710 326, 333 4991491"], ["Pizzo Roberto","0692710 240"], ["Pontremolesi Luigi","0692710 408"], ["Ponzi Alessandro","0692710 327, 331 6442333"], ["Provinciali David",", 334 6719782"], ["Pullia Alberto","0692710 540, 335 8095006"], ["Puntuorno Leopoldo","0692710 335"], ["Recchia Emanuele","0692710 328, 334 6727475"], ["Repetto Fabio","0692710 546"], ["Ricci Roberto","0692710 329, 335 8051907"], ["Righetti Daniele","0692710 330"], ["Romani Claudio","0692710 351"], ["Romani Fabio","0692710 404, 339 7855584"], ["Romani Fabio (IPS)","0692710 304"], ["Romani Mario","0692710 205"], ["Rosciarelli Fabrizio","0692710 383, 331 6817290"], ["Rozzi Renato","0692710 332"], ["Rucci Daniele","0692710 269, 334 2508860"], ["Santarelli Francesco","0692710 376"], ["Santillo Ugo","0692710 521, 335 7483217"], ["Santinelli Luciano","0692710 347, 333 4970404"], ["Sartori Danilo Lauro","0692710 235"], ["Scarano Andrea","0692710 400"], ["Serafinelli Fabio","0692710 305"], ["Siragusa Vincenzo","0692710 472"], ["Sperduti Alberto","0692710 377, 335 5997656"], ["Sperduti Stefano","0692710 337"], ["Spinilli Walter","0692710 234"], ["Squitti Mario","0692710 220, 338 6246611"], ["Talamini Alcide Paolo","0692710 211"], ["Testa Carlo","0692710 267, 335 6985707"], ["Testi Andrea","0692710 537, 335 1891625"], ["Tomaselli Fabio",""], ["Vannozzi Federico","0692710 340, 333 6918755"], ["Venafro Mauro","0692710 254"], ["Verdi Dario","0692710 212, 335 8295952"], ["Zurlo Massimiliano","0692710 378"]
+			]
+
+		con = for n in rubrica
+			n[0] + ": " + n[1] if n[0].toLowerCase().indexOf(nome.toLowerCase())>=0
+
+		a = ""
+		for r in con
+			a = a + r + "\n" if r?
+		
+		a = "Non lo trovo, sicuro che l'hai scritto bene?" if a=="" 
+
+		res.reply a
