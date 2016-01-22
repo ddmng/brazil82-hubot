@@ -23,3 +23,6 @@ module.exports = (robot) ->
 
 	robot.hear /vado via/i, (res) ->
 		res.reply "Allora non hai capito il momento!"
+
+	robot.hear /buongiorno/i, (res) ->
+		res.reply "Buongiorno il cazzo!!"
