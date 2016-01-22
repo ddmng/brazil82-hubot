@@ -14,3 +14,17 @@ module.exports = (robot) ->
 
 	robot.respond /insulta (.*)/i, (res) ->
 		res.reply "A " + res.match[1] + ", non capisci un cazzo!"
+
+	robot.respond /segnati (.*) = (.*)/i, (res) ->
+		robot.brain.set ''+res.match[1] , res.match[2]
+		res.reply 'Messo in banca: ' + res.match[1] + ' = ' + res.match[2]
+
+	robot.respond /ricordami (.*)/i, (res) ->
+		ricordo  = robot.brain.get(''+res.match[1]) or "UNK"
+		console.log 'Eccolo: ' + ricordo
+
+		if ricordo == "UNK"
+			res.reply "Non ricordo niente!"
+		else
+			res.reply 'Eccotelo: ' + ricordo
+
