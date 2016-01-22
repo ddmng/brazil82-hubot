@@ -31,5 +31,3 @@ module.exports = (robot) ->
 	robot.respond /grazie/i, (res) ->
 		res.reply 'prego, dovere'
 
-	robot.respond /Grazie/i, (res) ->
-		res.reply 'Prego, dovere'
