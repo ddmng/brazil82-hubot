@@ -29,3 +29,6 @@ module.exports = (robot) ->
 
 	robot.respond /ringrazia (.*)/i, (res) ->
 		res.reply "Grazie " + res.match[1] + ", sei tutti noi!"
+
+	robot.respond /insulta (.*)/i, (res) ->
+		res.reply "A " + res.match[1] + ", non capisci un cazzo!"
