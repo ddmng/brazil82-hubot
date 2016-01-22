@@ -28,3 +28,8 @@ module.exports = (robot) ->
 		else
 			res.reply 'Eccotelo: ' + ricordo
 
+	robot.respond /grazie/i, (res) ->
+		res.reply 'prego, dovere'
+
+	robot.respond /Grazie/i, (res) ->
+		res.reply 'Prego, dovere'
