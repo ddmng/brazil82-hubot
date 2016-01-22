@@ -26,3 +26,6 @@ module.exports = (robot) ->
 
 	robot.hear /buongiorno/i, (res) ->
 		res.reply "Buongiorno il cazzo!!"
+
+	robot.respond /ringrazia (.*)/i, (res) ->
+		res.reply "Grazie " + res.match[1] + ", sei tutti noi!"
