@@ -6,14 +6,17 @@ module.exports = (robot) ->
 	robot.hear /vado via/i, (res) ->
 		res.reply "Allora non hai capito il momento!"
 
+	robot.hear /devo andare/i, (res) ->
+		res.reply "Non sai cosa c'è là fuori!"
+
 	robot.hear /buongiorno/i, (res) ->
-		res.reply "Buongiorno il cazzo!!"
+		res.reply "Buongiorno? è questa l'ora di arrivare???"
 
 	robot.respond /ringrazia (.*)/i, (res) ->
-		res.reply "Grazie " + res.match[1] + ", sei tutti noi!"
+		res.reply "Grazie " + res.match[1] + ", sei un grande!"
 
 	robot.respond /insulta (.*)/i, (res) ->
-		res.reply "A " + res.match[1] + ", non capisci un cazzo!"
+		res.reply "A coso, " + res.match[1] + ", se le cose non le sai, salle!"
 
 	robot.respond /segnati (.*) = (.*)/i, (res) ->
 		robot.brain.set ''+res.match[1] , res.match[2]
@@ -29,5 +32,4 @@ module.exports = (robot) ->
 			res.reply 'Eccotelo: ' + ricordo
 
 	robot.respond /grazie/i, (res) ->
-		res.reply 'prego, dovere'
-
+		res.reply 'Prego, dovere'
