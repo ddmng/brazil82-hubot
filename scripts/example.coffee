@@ -33,3 +33,9 @@ module.exports = (robot) ->
 
 	robot.respond /grazie/i, (res) ->
 		res.reply 'Prego, dovere'
+
+	robot.respond /elena/i, (res) ->
+		res.reply 'Tutto qui?\n... prova a vedere qui: https://www.google.it/search?q=elena+riz&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwjrqqrE7dvKAhWEPhQKHaHhDYkQsAQIHw&biw=1920&bih=507#tbm=isch&q=elena+riz\n\nSe ne vuoi qualcuna nuda... basta chiedere!'
+
+	robot.respond /elena nuda/i, (res) ->
+		res.reply 'Brutto porco!\n... prova a vedere qui: https://www.google.it/search?q=elena+riz&tbm=isch&tbo=u&source=univ&sa=X&ved=0ahUKEwjrqqrE7dvKAhWEPhQKHaHhDYkQsAQIHw&biw=1920&bih=507#tbm=isch&q=elena+riz+nuda'
