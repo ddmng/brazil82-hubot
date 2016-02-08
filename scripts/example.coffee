@@ -1,17 +1,5 @@
 module.exports = (robot) ->
 
-	robot.hear /ciao a/i, (res) ->
-		res.reply "Ciao bello! (si fa per dire)"
-
-	robot.hear /vado via/i, (res) ->
-		res.reply "Allora non hai capito il momento!"
-
-	robot.hear /devo andare/i, (res) ->
-		res.reply "Non sai cosa c'è là fuori!"
-
-	robot.hear /buongiorno/i, (res) ->
-		res.reply "Buongiorno? è questa l'ora di arrivare???"
-
 	robot.respond /ringrazia (.*)/i, (res) ->
 		res.reply "Grazie " + res.match[1] + ", sei un grande!"
 
